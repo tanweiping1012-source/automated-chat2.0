@@ -3,72 +3,236 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Consumer Chat Flow Demo</title>
+    <title>Consumer Flow Storyboard</title>
     <link rel="icon" href="data:," />
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./strip.css" />
   </head>
   <body>
-    <div class="stage">
-      <div class="phone" role="application" aria-label="Chat demo">
-        <div class="phone__status">
-          <div class="status__time">8:00</div>
-          <div class="status__icons" aria-hidden="true">
-            <span class="status__dot"></span>
-            <span class="status__dot"></span>
-            <span class="status__dot"></span>
-            <span class="status__pill"></span>
+    <div class="story">
+      <div class="story__row" aria-label="Storyboard">
+        <div class="phone" aria-label="Step 1">
+          <div class="phone__status">
+            <div class="status__time">8:00</div>
+            <div class="status__icons" aria-hidden="true">
+              <span class="status__dot"></span>
+              <span class="status__dot"></span>
+              <span class="status__dot"></span>
+              <span class="status__pill"></span>
+            </div>
           </div>
-        </div>
-
-        <div class="phone__top">
-          <button class="top__btn" type="button" aria-label="Back">
-            <span class="iconBack" aria-hidden="true"></span>
-          </button>
-          <div class="top__title">
-            <div class="brand">
-              <div class="brand__logo" aria-hidden="true"></div>
-              <div class="brand__meta">
-                <div class="brand__name">
-                  Adidas
-                  <span class="badgeVerified" aria-hidden="true"></span>
+          <div class="phone__top">
+            <button class="top__btn" type="button" aria-label="Back"><span class="iconBack" aria-hidden="true"></span></button>
+            <div class="top__title">
+              <div class="brand">
+                <div class="brand__logo" aria-hidden="true"></div>
+                <div class="brand__meta">
+                  <div class="brand__name">Adidas <span class="badgeVerified" aria-hidden="true"></span></div>
+                  <div class="brand__sub">Business chat</div>
                 </div>
-                <div class="brand__sub">Business chat</div>
+              </div>
+            </div>
+            <button class="top__btn" type="button" aria-label="More"><span class="iconDots" aria-hidden="true">⋯</span></button>
+          </div>
+          <div class="chat">
+            <div class="chat__top">
+              <div class="row row--left">
+                <div class="avatar" aria-hidden="true"></div>
+                <div class="bubble">
+                  To help us recommend the right products, what kind of outfits do you usually prefer?
+                </div>
+              </div>
+            </div>
+            <div class="chat__bottom">
+              <div class="quickReplies" aria-label="Quick replies">
+                <div class="reply">I like relaxed cotton tees.</div>
+                <div class="reply">I prefer sporty sets and sneakers.</div>
+                <div class="reply">I mostly wear casual streetwear.</div>
               </div>
             </div>
           </div>
-          <button class="top__btn" type="button" aria-label="More">
-            <span class="iconDots" aria-hidden="true">⋯</span>
-          </button>
+          <div class="composer" aria-label="Composer">
+            <button class="composer__btn" type="button" aria-label="Camera"><span class="iconCam" aria-hidden="true"></span></button>
+            <div class="composer__input" aria-hidden="true"></div>
+            <div class="composer__right">
+              <button class="composer__btn" type="button" aria-label="Emoji"><span class="iconSmile" aria-hidden="true"></span></button>
+              <button class="composer__btn" type="button" aria-label="Gallery"><span class="iconPic" aria-hidden="true"></span></button>
+              <button class="composer__btn" type="button" aria-label="Mic"><span class="iconMic" aria-hidden="true"></span></button>
+            </div>
+          </div>
         </div>
 
-        <div id="chat" class="chat" aria-label="Conversation"></div>
+        <div class="arrow" aria-hidden="true"></div>
 
-        <div class="composer" aria-label="Composer">
-          <button class="composer__btn" type="button" aria-label="Camera">
-            <span class="iconCam" aria-hidden="true"></span>
-          </button>
-          <div class="composer__input" aria-hidden="true"></div>
-          <div class="composer__right">
-            <button class="composer__btn" type="button" aria-label="Emoji">
-              <span class="iconSmile" aria-hidden="true"></span>
-            </button>
-            <button class="composer__btn" type="button" aria-label="Gallery">
-              <span class="iconPic" aria-hidden="true"></span>
-            </button>
-            <button class="composer__btn" type="button" aria-label="Mic">
-              <span class="iconMic" aria-hidden="true"></span>
-            </button>
+        <div class="phone" aria-label="Step 2">
+          <div class="phone__status">
+            <div class="status__time">8:00</div>
+            <div class="status__icons" aria-hidden="true">
+              <span class="status__dot"></span>
+              <span class="status__dot"></span>
+              <span class="status__dot"></span>
+              <span class="status__pill"></span>
+            </div>
+          </div>
+          <div class="phone__top">
+            <button class="top__btn" type="button" aria-label="Back"><span class="iconBack" aria-hidden="true"></span></button>
+            <div class="top__title">
+              <div class="brand">
+                <div class="brand__logo" aria-hidden="true"></div>
+                <div class="brand__meta">
+                  <div class="brand__name">Adidas <span class="badgeVerified" aria-hidden="true"></span></div>
+                  <div class="brand__sub">Business chat</div>
+                </div>
+              </div>
+            </div>
+            <button class="top__btn" type="button" aria-label="More"><span class="iconDots" aria-hidden="true">⋯</span></button>
+          </div>
+          <div class="chat">
+            <div class="chat__top">
+              <div class="row row--left">
+                <div class="avatar" aria-hidden="true"></div>
+                <div class="bubble">
+                  To help us recommend the right products, what kind of outfits do you usually prefer?
+                </div>
+              </div>
+            </div>
+            <div class="chat__bottom">
+              <div class="quickReplies" aria-label="Quick replies">
+                <div class="reply reply--pressed">I like relaxed cotton tees.</div>
+                <div class="reply">I prefer sporty sets and sneakers.</div>
+                <div class="reply">I mostly wear casual streetwear.</div>
+              </div>
+            </div>
+          </div>
+          <div class="composer" aria-label="Composer">
+            <button class="composer__btn" type="button" aria-label="Camera"><span class="iconCam" aria-hidden="true"></span></button>
+            <div class="composer__input" aria-hidden="true"></div>
+            <div class="composer__right">
+              <button class="composer__btn" type="button" aria-label="Emoji"><span class="iconSmile" aria-hidden="true"></span></button>
+              <button class="composer__btn" type="button" aria-label="Gallery"><span class="iconPic" aria-hidden="true"></span></button>
+              <button class="composer__btn" type="button" aria-label="Mic"><span class="iconMic" aria-hidden="true"></span></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="arrow" aria-hidden="true"></div>
+
+        <div class="phone" aria-label="Step 3">
+          <div class="phone__status">
+            <div class="status__time">8:00</div>
+            <div class="status__icons" aria-hidden="true">
+              <span class="status__dot"></span>
+              <span class="status__dot"></span>
+              <span class="status__dot"></span>
+              <span class="status__pill"></span>
+            </div>
+          </div>
+          <div class="phone__top">
+            <button class="top__btn" type="button" aria-label="Back"><span class="iconBack" aria-hidden="true"></span></button>
+            <div class="top__title">
+              <div class="brand">
+                <div class="brand__logo" aria-hidden="true"></div>
+                <div class="brand__meta">
+                  <div class="brand__name">Adidas <span class="badgeVerified" aria-hidden="true"></span></div>
+                  <div class="brand__sub">Business chat</div>
+                </div>
+              </div>
+            </div>
+            <button class="top__btn" type="button" aria-label="More"><span class="iconDots" aria-hidden="true">⋯</span></button>
+          </div>
+          <div class="chat">
+            <div class="chat__top">
+              <div class="row row--left">
+                <div class="avatar" aria-hidden="true"></div>
+                <div class="bubble">
+                  To help us recommend the right products, what kind of outfits do you usually prefer?
+                </div>
+              </div>
+              <div class="row row--right">
+                <div class="bubble bubble--user">I like relaxed cotton tees.</div>
+              </div>
+            </div>
+            <div class="chat__bottom"></div>
+          </div>
+          <div class="composer" aria-label="Composer">
+            <button class="composer__btn" type="button" aria-label="Camera"><span class="iconCam" aria-hidden="true"></span></button>
+            <div class="composer__input" aria-hidden="true"></div>
+            <div class="composer__right">
+              <button class="composer__btn" type="button" aria-label="Emoji"><span class="iconSmile" aria-hidden="true"></span></button>
+              <button class="composer__btn" type="button" aria-label="Gallery"><span class="iconPic" aria-hidden="true"></span></button>
+              <button class="composer__btn" type="button" aria-label="Mic"><span class="iconMic" aria-hidden="true"></span></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="arrow" aria-hidden="true"></div>
+
+        <div class="phone" aria-label="Step 4">
+          <div class="phone__status">
+            <div class="status__time">8:00</div>
+            <div class="status__icons" aria-hidden="true">
+              <span class="status__dot"></span>
+              <span class="status__dot"></span>
+              <span class="status__dot"></span>
+              <span class="status__pill"></span>
+            </div>
+          </div>
+          <div class="phone__top">
+            <button class="top__btn" type="button" aria-label="Back"><span class="iconBack" aria-hidden="true"></span></button>
+            <div class="top__title">
+              <div class="brand">
+                <div class="brand__logo" aria-hidden="true"></div>
+                <div class="brand__meta">
+                  <div class="brand__name">Adidas <span class="badgeVerified" aria-hidden="true"></span></div>
+                  <div class="brand__sub">Business chat</div>
+                </div>
+              </div>
+            </div>
+            <button class="top__btn" type="button" aria-label="More"><span class="iconDots" aria-hidden="true">⋯</span></button>
+          </div>
+          <div class="chat">
+            <div class="chat__top">
+              <div class="row row--left">
+                <div class="avatar" aria-hidden="true"></div>
+                <div class="bubble">
+                  To help us recommend the right products, what kind of outfits do you usually prefer?
+                </div>
+              </div>
+              <div class="row row--right">
+                <div class="bubble bubble--user">I like relaxed cotton tees.</div>
+              </div>
+              <div class="row row--left">
+                <div class="avatar" aria-hidden="true"></div>
+                <div class="bubble">Got it. Which style do you like most right now?</div>
+              </div>
+            </div>
+            <div class="chat__bottom">
+              <div class="quickReplies" aria-label="Quick replies">
+                <div class="reply">Sportswear</div>
+                <div class="reply">Casual wear</div>
+                <div class="reply">Elegant style</div>
+              </div>
+            </div>
+          </div>
+          <div class="composer" aria-label="Composer">
+            <button class="composer__btn" type="button" aria-label="Camera"><span class="iconCam" aria-hidden="true"></span></button>
+            <div class="composer__input" aria-hidden="true"></div>
+            <div class="composer__right">
+              <button class="composer__btn" type="button" aria-label="Emoji"><span class="iconSmile" aria-hidden="true"></span></button>
+              <button class="composer__btn" type="button" aria-label="Gallery"><span class="iconPic" aria-hidden="true"></span></button>
+              <button class="composer__btn" type="button" aria-label="Mic"><span class="iconMic" aria-hidden="true"></span></button>
+            </div>
           </div>
         </div>
       </div>
 
-      <div class="hint">
-        <div class="hint__title">Consumer flow (English)</div>
-        <div class="hint__text">Tap a quick reply to advance the flow. This is a C-end view only.</div>
-        <a class="hint__link" href="../index.html">Back to editor demo</a>
+      <div class="story__meta">
+        <div class="meta__title">Consumer flow (English) — storyboard</div>
+        <div class="meta__links">
+          <a class="meta__link" href="./interactive.html">Interactive version</a>
+          <span class="meta__sep">·</span>
+          <a class="meta__link" href="../index.html">Back to editor demo</a>
+        </div>
       </div>
     </div>
-
-    <script type="module" src="./app.js"></script>
   </body>
 </html>

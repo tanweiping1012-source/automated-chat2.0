@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Consumer Chat Flow Demo (Interactive)</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="stage">
+      <div class="phone" role="application" aria-label="Chat demo">
+        <div class="phone__status">
+          <div class="status__time">8:00</div>
+          <div class="status__icons" aria-hidden="true">
+            <span class="status__dot"></span>
+            <span class="status__dot"></span>
+            <span class="status__dot"></span>
+            <span class="status__pill"></span>
+          </div>
+        </div>
+
+        <div class="phone__top">
+          <button class="top__btn" type="button" aria-label="Back">
+            <span class="iconBack" aria-hidden="true"></span>
+          </button>
+          <div class="top__title">
+            <div class="brand">
+              <div class="brand__logo" aria-hidden="true"></div>
+              <div class="brand__meta">
+                <div class="brand__name">
+                  Adidas
+                  <span class="badgeVerified" aria-hidden="true"></span>
+                </div>
+                <div class="brand__sub">Business chat</div>
+              </div>
+            </div>
+          </div>
+          <button class="top__btn" type="button" aria-label="More">
+            <span class="iconDots" aria-hidden="true">⋯</span>
+          </button>
+        </div>
+
+        <div id="chat" class="chat" aria-label="Conversation"></div>
+
+        <div class="composer" aria-label="Composer">
+          <button class="composer__btn" type="button" aria-label="Camera">
+            <span class="iconCam" aria-hidden="true"></span>
+          </button>
+          <div class="composer__input" aria-hidden="true"></div>
+          <div class="composer__right">
+            <button class="composer__btn" type="button" aria-label="Emoji">
+              <span class="iconSmile" aria-hidden="true"></span>
+            </button>
+            <button class="composer__btn" type="button" aria-label="Gallery">
+              <span class="iconPic" aria-hidden="true"></span>
+            </button>
+            <button class="composer__btn" type="button" aria-label="Mic">
+              <span class="iconMic" aria-hidden="true"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="hint">
+        <div class="hint__title">Consumer flow (English)</div>
+        <div class="hint__text">Tap a quick reply to advance the flow. This is a C-end view only.</div>
+        <a class="hint__link" href="./index.html">View storyboard</a>
+        <div style="height:8px"></div>
+        <a class="hint__link" href="../index.html">Back to editor demo</a>
+      </div>
+    </div>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
