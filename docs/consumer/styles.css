@@ -123,7 +123,7 @@ body{
   background:radial-gradient(circle at 30% 30%, #3b82f6, #1d4ed8);
 }
 .brand__meta{display:flex; flex-direction:column; gap:2px; min-width:0}
-.brand__name{font-size:12.5px; font-weight:700; display:flex; align-items:center; gap:6px}
+.brand__name{font-size:13px; font-weight:700; color:#111827; display:flex; align-items:center; gap:6px}
 .brand__sub{font-size:11px; color:var(--muted)}
 .badgeVerified{
   width:14px;
