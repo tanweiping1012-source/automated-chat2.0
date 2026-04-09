@@ -57,13 +57,37 @@ body{
 .phone{
   width:320px;
   height:640px;
-  background:#ffffff;
-  border-radius:34px;
+  background:#0b0f19;
+  border-radius:44px;
   box-shadow:var(--shadow);
   overflow:hidden;
-  border:1px solid rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.10);
   display:flex;
   flex-direction:column;
+  padding:10px;
+}
+
+.screen{
+  background:#ffffff;
+  border-radius:34px;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  flex:1;
+  min-height:0;
+}
+.homeIndicator{
+  height:18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.homeIndicator:before{
+  content:"";
+  width:120px;
+  height:4px;
+  background:rgba(255,255,255,.72);
+  border-radius:999px;
 }
 
 .phone__status{
@@ -146,12 +170,24 @@ body{
 
 .chat{
   flex:1;
-  padding:12px 10px;
+  padding:12px 10px 0;
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+  min-height:0;
+}
+.messages{
+  flex:1;
   display:flex;
   flex-direction:column;
   gap:10px;
   overflow:auto;
-  min-height:0;
+  padding-bottom:8px;
+}
+.replies{
+  padding:8px 0 10px;
+  display:flex;
+  justify-content:center;
 }
 
 .row{display:flex; gap:8px; align-items:flex-end}
@@ -181,10 +217,10 @@ body{
 }
 
 .quickReplies{
-  margin-left:34px;
   display:flex;
   flex-direction:column;
-  gap:8px;
+  gap:10px;
+  align-items:center;
 }
 .reply{
   border:0;
@@ -194,12 +230,13 @@ body{
   padding:10px 12px;
   font-size:12px;
   cursor:pointer;
-  text-align:left;
-  width:fit-content;
-  max-width:84%;
+  text-align:center;
+  width:min(260px, calc(100% - 32px));
+  max-width:260px;
 }
 .reply:hover{background:var(--bubble2)}
 .reply:disabled{opacity:.6; cursor:not-allowed}
+.reply--pressed{background:var(--bubble2)}
 
 .composer{
   height:56px;
@@ -229,6 +266,17 @@ body{
   border-radius:999px;
   background:#f3f4f6;
   border:1px solid var(--border);
+  position:relative;
+  overflow:hidden;
+}
+.composer__input:before{
+  content:"Type a message…";
+  position:absolute;
+  left:12px;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:12px;
+  color:#9ca3af;
 }
 .composer__right{display:flex; gap:8px}
 .iconCam,.iconPic,.iconMic,.iconSmile{

@@ -33,6 +33,10 @@ const state = {
   locked: false,
 }
 
+function delay(ms) {
+  return new Promise((r) => setTimeout(r, ms))
+}
+
 function escapeHtml(str) {
   return String(str)
     .replaceAll("&", "&amp;")
@@ -73,51 +77,60 @@ function renderReplies(replies) {
 }
 
 function scrollToBottom() {
-  const el = $("#chat")
+  const el = $("#messages")
   if (!el) return
   el.scrollTop = el.scrollHeight
 }
 
 function renderInitial() {
-  const chat = $("#chat")
-  if (!chat) return
+  const messages = $("#messages")
+  const replies = $("#replies")
+  if (!messages || !replies) return
   const cur = flow[state.step]
-  chat.innerHTML = renderBubbleLeft(cur.bot) + renderReplies(cur.replies)
+  messages.innerHTML = renderBubbleLeft(cur.bot)
+  replies.innerHTML = renderReplies(cur.replies)
   scrollToBottom()
 }
 
 function disableReplies() {
-  const chat = $("#chat")
-  if (!chat) return
-  chat.querySelectorAll(".reply").forEach((b) => (b.disabled = true))
+  const replies = $("#replies")
+  if (!replies) return
+  replies.querySelectorAll(".reply").forEach((b) => (b.disabled = true))
 }
 
-function appendHtml(html) {
-  const chat = $("#chat")
-  if (!chat) return
+function appendMessageHtml(html) {
+  const messages = $("#messages")
+  if (!messages) return
   const wrapper = document.createElement("div")
   wrapper.innerHTML = html
-  while (wrapper.firstChild) chat.appendChild(wrapper.firstChild)
+  while (wrapper.firstChild) messages.appendChild(wrapper.firstChild)
   scrollToBottom()
 }
 
-function advanceWithReply(text) {
+async function advanceWithReply(text, pressedEl) {
   if (state.locked) return
   state.locked = true
+  if (pressedEl) pressedEl.classList.add("reply--pressed")
+  await delay(180)
   disableReplies()
+  await delay(120)
 
-  appendHtml(renderBubbleRight(text))
+  const replies = $("#replies")
+  if (replies) replies.innerHTML = ""
+  appendMessageHtml(renderBubbleRight(text))
+  await delay(260)
 
   const nextStep = state.step + 1
   if (nextStep >= flow.length) {
-    appendHtml(renderBubbleLeft("Thanks! We’ll tailor recommendations for you in the next message."))
+    appendMessageHtml(renderBubbleLeft("Thanks! We’ll tailor recommendations for you in the next message."))
     state.locked = false
     return
   }
 
   state.step = nextStep
   const cur = flow[state.step]
-  appendHtml(renderBubbleLeft(cur.bot) + renderReplies(cur.replies))
+  appendMessageHtml(renderBubbleLeft(cur.bot))
+  if (replies) replies.innerHTML = renderReplies(cur.replies)
   state.locked = false
 }
 
@@ -126,7 +139,7 @@ document.addEventListener("click", (e) => {
   if (!btn) return
   if (btn.dataset.action !== "reply") return
   const value = btn.dataset.value || ""
-  advanceWithReply(value)
+  advanceWithReply(value, btn)
 })
 
 renderInitial()

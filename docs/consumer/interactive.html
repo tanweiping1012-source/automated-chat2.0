@@ -10,56 +10,63 @@
   <body>
     <div class="stage">
       <div class="phone" role="application" aria-label="Chat demo">
-        <div class="phone__status">
-          <div class="status__time">8:00</div>
-          <div class="status__icons" aria-hidden="true">
-            <span class="status__dot"></span>
-            <span class="status__dot"></span>
-            <span class="status__dot"></span>
-            <span class="status__pill"></span>
-          </div>
-        </div>
-
-        <div class="phone__top">
-          <button class="top__btn" type="button" aria-label="Back">
-            <span class="iconBack" aria-hidden="true"></span>
-          </button>
-          <div class="top__title">
-            <div class="brand">
-              <div class="brand__logo" aria-hidden="true"></div>
-              <div class="brand__meta">
-                <div class="brand__name">
-                  Adidas
-                  <span class="badgeVerified" aria-hidden="true"></span>
-                </div>
-                <div class="brand__sub">Business chat</div>
-              </div>
+        <div class="screen">
+          <div class="phone__status">
+            <div class="status__time">8:00</div>
+            <div class="status__icons" aria-hidden="true">
+              <span class="status__dot"></span>
+              <span class="status__dot"></span>
+              <span class="status__dot"></span>
+              <span class="status__pill"></span>
             </div>
           </div>
-          <button class="top__btn" type="button" aria-label="More">
-            <span class="iconDots" aria-hidden="true">⋯</span>
-          </button>
-        </div>
 
-        <div id="chat" class="chat" aria-label="Conversation"></div>
-
-        <div class="composer" aria-label="Composer">
-          <button class="composer__btn" type="button" aria-label="Camera">
-            <span class="iconCam" aria-hidden="true"></span>
-          </button>
-          <div class="composer__input" aria-hidden="true"></div>
-          <div class="composer__right">
-            <button class="composer__btn" type="button" aria-label="Emoji">
-              <span class="iconSmile" aria-hidden="true"></span>
+          <div class="phone__top">
+            <button class="top__btn" type="button" aria-label="Back">
+              <span class="iconBack" aria-hidden="true"></span>
             </button>
-            <button class="composer__btn" type="button" aria-label="Gallery">
-              <span class="iconPic" aria-hidden="true"></span>
-            </button>
-            <button class="composer__btn" type="button" aria-label="Mic">
-              <span class="iconMic" aria-hidden="true"></span>
+            <div class="top__title">
+              <div class="brand">
+                <div class="brand__logo" aria-hidden="true"></div>
+                <div class="brand__meta">
+                  <div class="brand__name">
+                    Adidas
+                    <span class="badgeVerified" aria-hidden="true"></span>
+                  </div>
+                  <div class="brand__sub">Business chat</div>
+                </div>
+              </div>
+            </div>
+            <button class="top__btn" type="button" aria-label="More">
+              <span class="iconDots" aria-hidden="true">⋯</span>
             </button>
           </div>
+
+          <div class="chat" aria-label="Conversation">
+            <div id="messages" class="messages" aria-label="Messages"></div>
+            <div id="replies" class="replies" aria-label="Quick replies"></div>
+          </div>
+
+          <div class="composer" aria-label="Composer">
+            <button class="composer__btn" type="button" aria-label="Camera">
+              <span class="iconCam" aria-hidden="true"></span>
+            </button>
+            <div class="composer__input" aria-hidden="true"></div>
+            <div class="composer__right">
+              <button class="composer__btn" type="button" aria-label="Emoji">
+                <span class="iconSmile" aria-hidden="true"></span>
+              </button>
+              <button class="composer__btn" type="button" aria-label="Gallery">
+                <span class="iconPic" aria-hidden="true"></span>
+              </button>
+              <button class="composer__btn" type="button" aria-label="Mic">
+                <span class="iconMic" aria-hidden="true"></span>
+              </button>
+            </div>
+          </div>
         </div>
+
+        <div class="homeIndicator" aria-hidden="true"></div>
       </div>
 
       <div class="hint">
