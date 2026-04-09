@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Message Template Demo</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="topbar">
+        <div class="topbar__title">
+          <div class="topbar__name">Message template</div>
+        </div>
+        <button class="iconBtn iconBtn--plain" type="button" aria-label="Close">
+          <span class="closeX" aria-hidden="true"></span>
+        </button>
+      </header>
+      <main class="content">
+        <section class="panel panel--editor">
+          <div class="templateMeta" aria-label="Template meta">
+            <div class="templateMeta__left">
+              <div class="templateMeta__name">Untitled message template</div>
+              <div class="templateMeta__time">4/9/26, 13:58</div>
+            </div>
+            <button class="iconBtn iconBtn--plain" type="button" aria-label="Edit template name">
+              <span class="pencil" aria-hidden="true"></span>
+            </button>
+          </div>
+
+          <div class="section">
+            <div class="section__label">Select message template</div>
+            <div class="tabs" role="tablist" aria-label="Message template tabs">
+              <button class="tab" data-tab="start" role="tab" aria-selected="false">
+                Start conversations <span class="tabInfo" aria-hidden="true">i</span>
+              </button>
+              <button class="tab tab--active" data-tab="automated" role="tab" aria-selected="true">
+                Automated chat <span class="tabInfo" aria-hidden="true">i</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="section">
+            <div class="section__title">Automated chat flow</div>
+            <div class="section__hint">
+              Set up custom automated questions and answers to identify user intent, and streamline lead capture in direct messages.
+            </div>
+          </div>
+
+          <div id="questionsRoot" class="questions" aria-label="Custom questions"></div>
+
+          <div class="section section--actions">
+            <div class="menuWrap">
+              <button
+                id="addQuestionBtn"
+                class="btn btn--ghost btn--add"
+                type="button"
+                data-action="toggleAddMenu"
+                aria-haspopup="menu"
+                aria-expanded="false"
+              >
+                + Add custom question <span class="btnCaret" aria-hidden="true"></span>
+              </button>
+              <div id="addQuestionMenu" class="menu menu--hidden" role="menu" aria-label="Add question">
+                <button class="menuItem" type="button" role="menuitem" data-action="addQuestionType" data-value="custom">
+                  <div class="menuItem__title">Custom question</div>
+                  <div class="menuItem__desc">Multiple-choice answers with optional open-ended input.</div>
+                </button>
+                <button class="menuItem" type="button" role="menuitem" data-action="addQuestionType" data-value="userInfo">
+                  <div class="menuItem__title">User contact</div>
+                  <div class="menuItem__desc">Collect phone/email with optional validation.</div>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordionGroup">
+            <div class="accordion accordion--collapsed" data-static-accordion="completion">
+              <div class="accordion__header">
+                <div class="accordion__title">Completion notification</div>
+                <div class="accordion__right">
+                  <button class="iconBtn" type="button" aria-label="Toggle completion notification" data-action="toggleStaticAccordion">
+                    <span class="chev"></span>
+                  </button>
+                </div>
+              </div>
+              <div class="accordion__body">
+                <div class="field">
+                  <div class="field__label">Message</div>
+                  <textarea class="textarea" rows="3" placeholder="Optional completion message"></textarea>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion accordion--collapsed" data-static-accordion="disqualify">
+              <div class="accordion__header">
+                <div class="accordion__title">Disqualification notification</div>
+                <div class="accordion__right">
+                  <button class="iconBtn" type="button" aria-label="Toggle disqualification notification" data-action="toggleStaticAccordion">
+                    <span class="chev"></span>
+                  </button>
+                </div>
+              </div>
+              <div class="accordion__body">
+                <div class="field">
+                  <div class="field__label">Message</div>
+                  <textarea class="textarea" rows="3" placeholder="Optional disqualification message"></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <aside class="panel panel--preview" aria-label="Mobile preview">
+          <div class="previewHeader">
+            <div class="previewHeader__title">Mobile Preview</div>
+          </div>
+          <div id="mobileRoot" class="mobile"></div>
+        </aside>
+      </main>
+
+      <footer class="bottombar" aria-label="Actions">
+        <div class="bottombar__inner">
+          <div class="bottombar__spacer"></div>
+          <div class="bottombar__actions">
+            <button class="btn btn--ghost" type="button">Cancel</button>
+            <button class="btn btn--primary" type="button">Confirm</button>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
